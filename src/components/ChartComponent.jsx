@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import BarChart from './BarChart';
-import Paper from '../../../openinapp/src/components/Paper';
+import Paper from './Paper';
 
 const count = [
     {
