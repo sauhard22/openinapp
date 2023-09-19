@@ -7,7 +7,6 @@ import useViewport from './viewport/useViewport'
 function App(props) {
   const { user, setUser } = props
   const { width } = useViewport();
-  console.log(width)
   const [isOpen, setIsOpen] = useState(false);
 
   return (

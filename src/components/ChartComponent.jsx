@@ -39,7 +39,6 @@ const ChartComponent = (props) => {
             setData(d);
             setDisplayData1([d[generateRandom()].wd, d[generateRandom()].wd, d[generateRandom()].wd, d[generateRandom()].wd])
             setDisplayData2([d[generateRandom()].rh, d[generateRandom()].rh, d[generateRandom()].rh, d[generateRandom()].rh])
-            console.log(d);
         }
         catch (e) {
             console.log(e);

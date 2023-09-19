@@ -90,7 +90,7 @@ const PieChart = () => {
                 {
                     PieChartData.map((item, index) => {
                         return (
-                            <PieChartLegend name={item.name} percent={item.percent} color={item.color} />
+                            <PieChartLegend key={index} name={item.name} percent={item.percent} color={item.color} />
                         )
                     })
                 }
