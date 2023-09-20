@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Chart, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 import PieChartLegend from './PieChartLegend';
+import useViewport from '../viewport/useViewport';
 
 Chart.register(ArcElement, Tooltip, Legend);
 
@@ -47,6 +48,8 @@ const PieChart = () => {
     const canvasRef = useRef(null);
     const chartRef = useRef(null);
 
+    const {width} = useViewport()
+
     useEffect(() => {
         const ctx = canvasRef.current.getContext('2d');
         if (chartRef.current) {
@@ -61,7 +64,7 @@ const PieChart = () => {
                         display: false
                     }
                 },
-                cutout: 60,
+                cutout: width > 560 ? 60 : 45,
             },
         });
 
@@ -73,7 +76,7 @@ const PieChart = () => {
     }, []);
 
     return (
-        <div className='h-[180px] flex flex-row justify-end'>
+        <div className=' vsm:h-[150px] sm:h-[180px] flex flex-row justify-end'>
             {/* <canvas ref={canvasRef}/> */}
             {/* <Doughnut className='absolute vsm:left-[-10px] vsm:bottom-[50px] sm:left-[15px] sm:bottom-[40px] h-[180px]' data={data} options={
                 {
@@ -85,7 +88,7 @@ const PieChart = () => {
                     cutout: 60,
                 }
             } /> */}
-            <canvas className='absolute vsm:left-[-10px] vsm:bottom-[50px] sm:left-[15px] sm:bottom-[40px] h-[180px]' ref={canvasRef} />
+            <canvas className='absolute vsm:left-[5px] vsm:bottom-[60px] sm:left-[15px] sm:bottom-[40px] h-[180px]' ref={canvasRef} />
             <div className='justify-evenly flex flex-col vsm:mr-[10px] sm:m-[0px] vsm:mt-[20px] sm:mr-[28px]'>
                 {
                     PieChartData.map((item, index) => {
