@@ -51,7 +51,7 @@ const SignIn = (props) => {
                     </div>
                 </div>
                 <h1 className='text-[#346BD4] font-["Lato"] text-[16px] font-normal '>Forgot Password?</h1>
-                <button onClick={() => {handleSignInWithGoogle()}} className='text-[#fff] font-["Montserrat"] text-[16px] font-bold py-[10px] px-[122px] bg-[#4285F4] rounded-[10px]'>Sign In</button>
+                <button onClick={() => { handleSignInWithGoogle() }} className='text-[#fff] font-["Montserrat"] text-[16px] font-bold py-[10px] px-[122px] bg-[#4285F4] rounded-[10px]'>Sign In</button>
             </form>
             <div className='flex flex-row justify-center items-center mt-[21.96px]'>
                 <h1 className='text-[#858585] font-["Lato"] text-[16px] font-normal '>Don't have an account?</h1>
